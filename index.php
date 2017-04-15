@@ -1,11 +1,13 @@
 <?php
 define('DIR_BASE', str_replace('\\', '/', realpath(dirname(__FILE__))) . '/');
 
+require_once(DIR_BASE . 'library/utf8.php');
+
 $lists = array();
 $blacklists = array();
 $output = '';
 
-$files[] = 'https://raw.githubusercontent.com/openix/blacklist/master/blacklist';
+$files[] = 'https://raw.githubusercontent.com/epiksel/spammerbye/master/spammers.txt';
 $files[] = 'https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt';
 $files[] = 'https://raw.githubusercontent.com/Stevie-Ray/referrer-spam-blocker/master/src/domains.txt';
 $files[] = 'https://raw.githubusercontent.com/Flameeyes/modsec-flameeyes/master/rules/flameeyes_bad_referrers.data';
@@ -15,7 +17,7 @@ foreach ($files as $file) {
 	$lists = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 	foreach ($lists as $list) {
-		$blacklists[$list] = $list;
+		$blacklists[utf8_strtolower($list)] = utf8_strtolower($list);
 	}
 }
 
