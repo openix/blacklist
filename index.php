@@ -17,7 +17,9 @@ foreach ($files as $file) {
 	$lists = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 	foreach ($lists as $list) {
-		$blacklists[utf8_strtolower($list)] = utf8_strtolower($list);
+		$referral = rtrim(utf8_strtolower($list), '/');
+
+		$blacklists[$referral] = $referral;
 	}
 }
 
