@@ -7,7 +7,7 @@ $lists = array();
 $blacklists = array();
 $output = '';
 
-$files[] = 'https://raw.githubusercontent.com/epiksel/spammerbye/master/spammers.txt';
+$files[] = 'https://raw.githubusercontent.com/openix/blacklist/master/openixlist';
 $files[] = 'https://raw.githubusercontent.com/piwik/referrer-spam-blacklist/master/spammers.txt';
 $files[] = 'https://raw.githubusercontent.com/Stevie-Ray/referrer-spam-blocker/master/src/domains.txt';
 $files[] = 'https://raw.githubusercontent.com/Flameeyes/modsec-flameeyes/master/rules/flameeyes_bad_referrers.data';
