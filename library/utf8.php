@@ -7,6 +7,20 @@ function utf8_htmlspecialchars($string) {
 	return htmlspecialchars($string, ENT_QUOTES);
 }
 
+function replaceSpace($string, $none = false, $nl2br = false) {
+	$string = preg_replace('/\s?\&nbsp;+/', ' ', $string);
+
+	if ($nl2br) {
+		$string = preg_replace('~\r?\n~', ' ', $string);
+	}
+
+	if ($none) {
+		$string = str_replace(' ', '', $string);
+	}
+
+	return trim($string);
+}
+
 if (extension_loaded('mbstring')) {
 	mb_internal_encoding('UTF-8');
 

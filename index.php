@@ -17,7 +17,7 @@ foreach ($files as $file) {
 	$lists = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 	foreach ($lists as $list) {
-		$referral = rtrim(utf8_strtolower($list), '/');
+		$referral = replaceSpace(rtrim(utf8_strtolower($list), '/'));
 
 		$blacklists[$referral] = $referral;
 	}
