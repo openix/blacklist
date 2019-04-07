@@ -11,8 +11,6 @@ $files[] = 'openixlist';
 $files[] = 'https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt';
 $files[] = 'https://raw.githubusercontent.com/Stevie-Ray/referrer-spam-blocker/master/src/domains.txt';
 $files[] = 'https://raw.githubusercontent.com/desbma/referer-spam-domains-blacklist/master/spammers.txt';
-// It hasn't been updated in 1 year. It will then be moved to the default list.
-$files[] = 'https://raw.githubusercontent.com/Flameeyes/modsec-flameeyes/master/rules/flameeyes_bad_referrers.data';
 
 foreach ($files as $file) {
 	$lists = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
